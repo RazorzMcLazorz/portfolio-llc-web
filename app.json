@@ -15,7 +15,7 @@
       "url": "heroku/nodejs"
     },
     {
-      "url": "heroku/nginx"
+      "url": "heroku-community/nginx"
     }
   ]
 }
