@@ -8,13 +8,39 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 import React from 'react'
 import { Router, Route } from '@redwoodjs/router'
-import HomePage from './pages/HomePage/HomePage'
 import StylesType from 'src/StylesType'
+
+import HomePage from './pages/HomePage/HomePage'
+// import Projects from './pages/projects'
+// import Skills from './pages/skills'
+// import Login from './pages/login'
+// import Contact from './pages/contact'
+
+// import HomeMob from './pages/homeMob'
+// import MobProjects from './pages/mobProject'
+// import SkillsMob from './pages/skillsMob'
+// import ContactMob from './pages/contactMob'
 
 const Routes = ({ styles }: { styles: StylesType }) => {
   return (
     <Router>
-      <Route path="/" page={() => <HomePage styles={styles} />} name="home" />
+      {screen.width < 600 ? (
+        <>
+          {/* <Route path="/" component={HomeMob} />
+          <Route path="/login" component={Login} />
+          <Route path="/contact" component={ContactMob} />
+          <Route path="/projects" component={MobProjects} />
+          <Route path="/skills" component={SkillsMob} /> */}
+        </>
+      ) : (
+        <>
+          <Route path="/" page={() => <HomePage styles={styles} />} name="home" />
+          {/* <Route exact path='/projects' component={Projects} />
+          <Route exact path='/skills' component={Skills} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/contact' component={Contact} /> */}
+        </>
+      )}
       <Route notfound page={() => <HomePage styles={styles} />} />
     </Router>
   )

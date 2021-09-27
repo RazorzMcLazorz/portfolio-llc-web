@@ -3,7 +3,7 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import styles from './styles/index.module.scss'
+import styles from 'src/styles/index.module.scss'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage/FatalErrorPage'
 import Routes from 'src/Routes'
