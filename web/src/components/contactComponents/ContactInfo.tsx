@@ -1,22 +1,27 @@
 import React, { Component } from 'react'
+import StylesType from 'src/StylesType'
 
 interface IProps {
   isMobile: boolean
+  styles: StylesType
 }
 
 class ContactInfo extends Component<IProps> {
   render() {
+    const { styles } = this.props
     return (
-      <div className="ContactInfo">
+      <div className={styles.ContactInfo}>
         <div
           className={
-            this.props.isMobile ? 'ContactInfoNameMob' : 'ContactInfoName'
+            this.props.isMobile
+              ? styles.ContactInfoNameMob
+              : styles.ContactInfoName
           }
         >
           My Contact Info
         </div>
         <div>You can find me at these links</div>
-        <div className="MYLinks">
+        <div className={styles.MYLinks}>
           <a
             href="https://github.com/RazorzMcLazorz"
             target="_blank"
@@ -40,9 +45,9 @@ class ContactInfo extends Component<IProps> {
           </a>
         </div>
         <div>Or</div>
-        <div className="MYLinksTop">Manually message me at: </div>
+        <div className={styles.MYLinksTop}>Manually message me at: </div>
 
-        <div className="MYLinksTop3" id="email">
+        <div className={styles.MYLinksTop3} id={styles.email}>
           nateyoungdev@gmail.com
         </div>
       </div>

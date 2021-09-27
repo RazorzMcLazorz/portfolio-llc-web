@@ -20,11 +20,11 @@ class ContactPage extends Component<IProps> {
         </Head>
         <Navbar />
         <div className={styles.contactLeftSide}>
-          <ContactInfo isMobile={false} />
-          <ResumeInfo isMobile={false} />
+          <ContactInfo isMobile={false} styles={styles} />
+          <ResumeInfo isMobile={false} styles={styles} />
         </div>
         <div className={styles.contactRightSide}>
-          <Refferences isMobile={false} />
+          <Refferences isMobile={false} styles={styles} />
         </div>
       </div>
     )

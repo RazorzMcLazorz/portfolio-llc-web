@@ -6,16 +6,16 @@ import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
 // @ts-ignore
 import Resume from './Resume.pdf'
 import print from 'print-js'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import styles from 'src/styles/index.module.scss'
+import StylesType from 'src/StylesType'
 
 interface IProps {
   isMobile: boolean
+  styles: StylesType
 }
 
 class ResumeInfo extends Component<IProps> {
   render() {
+    const { styles } = this.props
     return (
       <div className={styles.ResumeInfo}>
         <div

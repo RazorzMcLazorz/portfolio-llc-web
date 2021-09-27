@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import styles from 'src/styles/index.module.scss'
+import StylesType from 'src/StylesType'
 
 interface IProps {
   isMobile: boolean
+  styles: StylesType
 }
 
 class Refferences extends Component<IProps> {
@@ -28,6 +27,7 @@ class Refferences extends Component<IProps> {
   }
 
   render() {
+    const { styles } = this.props
     return (
       <div className={styles.Refferences}>
         <div
