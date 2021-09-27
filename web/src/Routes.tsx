@@ -6,15 +6,15 @@
 //
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
-
+import React from 'react'
 import { Router, Route } from '@redwoodjs/router'
-import Home from './pages/Home'
+import HomePage from './pages/HomePage/HomePage'
 
 const Routes = () => {
   return (
     <Router>
-      <Route path="/" page={() => <Home />} name="home" />
-      <Route notfound page={() => <Home />} />
+      <Route path="/" page={HomePage} name="home" />
+      <Route notfound page={HomePage} />
     </Router>
   )
 }

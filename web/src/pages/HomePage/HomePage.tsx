@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from '@redwoodjs/router'
-import NameSigned from '../components/nameSigned'
+import NameSigned from '../../components/nameSigned'
 
-class Home extends Component {
+class HomePage extends Component {
   state = {
     langColLeft: [
       'React.js',
@@ -167,4 +167,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default HomePage
