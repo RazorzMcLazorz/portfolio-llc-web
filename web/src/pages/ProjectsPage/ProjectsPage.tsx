@@ -9,19 +9,20 @@ interface IProps {
 
 class ProjectsPage extends Component<IProps> {
   project(project) {
+    const { styles } = this.props
     return (
-      <div className="project">
-        <div className="project-title">
+      <div className={styles.project}>
+        <div className={styles['project-title']}>
           {websiteData.projects.title[project]}
         </div>
-        <div className="project-details">
-          <div className="project-description">
+        <div className={styles['project-details']}>
+          <div className={styles['project-description']}>
             {websiteData.projects.summary[project]}
           </div>
-          <div className="project-buttons">
+          <div className={styles['project-buttons']}>
             {websiteData.projects.link[project] && (
               <a
-                className="project-button-component"
+                className={styles['project-button-component']}
                 onMouseOver={() => console.log('mouseover')}
                 onFocus={() => console.log()}
                 target="_blank"
@@ -33,7 +34,7 @@ class ProjectsPage extends Component<IProps> {
             )}
             {websiteData.projects.dedicate[project] && (
               <a
-                className="project-button-component"
+                className={styles['project-button-component']}
                 href={websiteData.projects.dedicate[project]}
               >
                 <i className="far fa-newspaper"></i>
@@ -41,7 +42,7 @@ class ProjectsPage extends Component<IProps> {
             )}
             {websiteData.projects.github[project] && (
               <a
-                className="project-button-component"
+                className={styles['project-button-component']}
                 target="_blank"
                 href={websiteData.projects.github[project]}
                 rel="noreferrer"
@@ -51,20 +52,26 @@ class ProjectsPage extends Component<IProps> {
             )}
           </div>
         </div>
-        <div className="project-date">{websiteData.projects.date[project]}</div>
+        <div className={styles['project-date']}>
+          {websiteData.projects.date[project]}
+        </div>
       </div>
     )
   }
 
   render() {
+    const { styles } = this.props
     return (
       <div>
         <NavBar />
-        <div id="projectWall">
-          <div id="allProjects">
+        <div id={styles.projectWall}>
+          <div id={styles.allProjects}>
             {websiteData.bestProject && (
-              <div className="projectBox">
-                <div id="bestProject" className="projectBoxHeader">
+              <div className={styles.projectBox}>
+                <div
+                  id={styles.bestProject}
+                  className={styles.projectBoxHeader}
+                >
                   Best Project
                 </div>
                 {websiteData.bestProject.map((project, key) => (
@@ -74,8 +81,11 @@ class ProjectsPage extends Component<IProps> {
             )}
 
             {websiteData.currentProject && (
-              <div className="projectBox">
-                <div id="currentProject" className="projectBoxHeader">
+              <div className={styles.projectBox}>
+                <div
+                  id={styles.currentProject}
+                  className={styles.projectBoxHeader}
+                >
                   Current Projects
                 </div>
                 {websiteData.currentProject.map((project, key) => (
@@ -85,8 +95,11 @@ class ProjectsPage extends Component<IProps> {
             )}
 
             {websiteData.pastOtherProject && (
-              <div className="projectBox">
-                <div id="pastProject" className="projectBoxHeader">
+              <div className={styles.projectBox}>
+                <div
+                  id={styles.pastProject}
+                  className={styles.projectBoxHeader}
+                >
                   Past Projects
                 </div>
                 {websiteData.pastOtherProject.map((project, key) => (
@@ -96,8 +109,10 @@ class ProjectsPage extends Component<IProps> {
             )}
 
             {websiteData.pastPersonalProject && (
-              <div className="projectBox">
-                <div className="projectBoxHeader">Past Personal Projects</div>
+              <div className={styles.projectBox}>
+                <div className={styles.projectBoxHeader}>
+                  Past Personal Projects
+                </div>
                 {websiteData.pastPersonalProject.map((project, key) => (
                   <div key={key}> {this.project(project)}</div>
                 ))}

@@ -9,19 +9,20 @@ interface IProps {
 
 class ProjectsMobPage extends Component<IProps> {
   project(project) {
+    const { styles } = this.props
     return (
-      <div className="mobProject-box">
-        <div className="mobProject-title">
+      <div className={styles['mobProject-box']}>
+        <div className={styles['mobProject-title']}>
           {websiteData.projects.title[project]}
         </div>
-        <div className="mobProject-details">
-          <div className="mobProject-description">
+        <div className={styles['mobProject-details']}>
+          <div className={styles['mobProject-description']}>
             {websiteData.projects.summary[project]}
           </div>
-          <div className="mobProject-buttons">
+          <div className={styles['mobProject-buttons']}>
             {websiteData.projects.link[project] && (
               <a
-                className="mobProject-button-component"
+                className={styles['mobProject-button-component']}
                 onMouseOver={() => console.log('mouseover')}
                 onFocus={() => console.log()}
                 target="_blank"
@@ -33,7 +34,7 @@ class ProjectsMobPage extends Component<IProps> {
             )}
             {websiteData.projects.dedicate[project] && (
               <a
-                className="mobProject-button-component"
+                className={styles['mobProject-button-component']}
                 href={websiteData.projects.dedicate[project]}
               >
                 <i className="far fa-newspaper"></i>
@@ -41,7 +42,7 @@ class ProjectsMobPage extends Component<IProps> {
             )}
             {websiteData.projects.github[project] && (
               <a
-                className="mobProject-button-component"
+                className={styles['mobProject-button-component']}
                 target="_blank"
                 href={websiteData.projects.github[project]}
                 rel="noreferrer"
@@ -51,7 +52,7 @@ class ProjectsMobPage extends Component<IProps> {
             )}
           </div>
         </div>
-        <div className="mobProject-date">
+        <div className={styles['mobProject-date']}>
           {websiteData.projects.date[project]}
         </div>
       </div>
@@ -59,15 +60,16 @@ class ProjectsMobPage extends Component<IProps> {
   }
 
   render() {
+    const { styles } = this.props
     return (
       <div>
         <NavBar />
-        <div id="mobProject">
-          <div id="mobAllProjects">
+        <div id={styles.mobProject}>
+          <div id={styles.mobAllProjects}>
             {websiteData.bestProject && (
-              <div className="mobProjectBox">
-                <div className="mobProjectBoxHeader">Best Project</div>
-                <div className="mobProjectBoxInformation">
+              <div className={styles.mobProjectBox}>
+                <div className={styles.mobProjectBoxHeader}>Best Project</div>
+                <div className={styles.mobProjectBoxInformation}>
                   {websiteData.bestProject.map((project, key) => (
                     <div key={key}> {this.project(project)}</div>
                   ))}
@@ -76,8 +78,10 @@ class ProjectsMobPage extends Component<IProps> {
             )}
 
             {websiteData.currentProject && (
-              <div className="mobProjectBox">
-                <div className="mobProjectBoxHeader">Current Projects</div>
+              <div className={styles.mobProjectBox}>
+                <div className={styles.mobProjectBoxHeader}>
+                  Current Projects
+                </div>
                 {websiteData.currentProject.map((project, key) => (
                   <div key={key}> {this.project(project)}</div>
                 ))}
@@ -85,8 +89,8 @@ class ProjectsMobPage extends Component<IProps> {
             )}
 
             {websiteData.pastOtherProject && (
-              <div className="mobProjectBox">
-                <div className="mobProjectBoxHeader">Past Projects</div>
+              <div className={styles.mobProjectBox}>
+                <div className={styles.mobProjectBoxHeader}>Past Projects</div>
                 {websiteData.pastOtherProject.map((project, key) => (
                   <div key={key}> {this.project(project)}</div>
                 ))}
@@ -94,8 +98,8 @@ class ProjectsMobPage extends Component<IProps> {
             )}
 
             {websiteData.pastPersonalProject && (
-              <div className="mobProjectBox">
-                <div className="mobProjectBoxHeader">
+              <div className={styles.mobProjectBox}>
+                <div className={styles.mobProjectBoxHeader}>
                   Past Personal Projects
                 </div>
                 {websiteData.pastPersonalProject.map((project, key) => (

@@ -23,9 +23,7 @@ const LanguageWordsInner = [
   'Node.js',
 ]
 
-interface IProps {
-  small: boolean
-}
+interface IProps {}
 
 class SkillsSpin extends Component<IProps> {
   render() {
