@@ -10,11 +10,11 @@ import React from 'react'
 import { Router, Route } from '@redwoodjs/router'
 import HomePage from './pages/HomePage/HomePage'
 
-const Routes = () => {
+const Routes = ({ styles }: { styles: any }) => {
   return (
     <Router>
-      <Route path="/" page={HomePage} name="home" />
-      <Route notfound page={HomePage} />
+      <Route path="/" page={() => <HomePage styles={styles} />} name="home" />
+      <Route notfound page={() => <HomePage styles={styles} />} />
     </Router>
   )
 }

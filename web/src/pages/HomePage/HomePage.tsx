@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { Link } from '@redwoodjs/router'
 import NameSigned from '../../components/nameSigned'
 
-class HomePage extends Component {
+interface IProps {
+  styles: any
+}
+
+class HomePage extends Component<IProps> {
   state = {
     langColLeft: [
       'React.js',
@@ -61,16 +65,17 @@ class HomePage extends Component {
   }
 
   render() {
+    const { styles } = this.props
     return (
-      <div id="home" className="energyBackground">
-        <div id="homeNav">
-          <Link to="projects" className="homeNavLink">
+      <div id={styles.home} className={styles.energyBackground}>
+        <div id={styles.homeNav}>
+          <Link to="projects" className={styles.homeNavLink}>
             Projects
           </Link>
-          <Link to="skills" className="homeNavLink">
+          <Link to="skills" className={styles.homeNavLink}>
             Skills
           </Link>
-          <Link to="contact" className="homeNavLink">
+          <Link to="contact" className={styles.homeNavLink}>
             Contact
           </Link>
           <a
@@ -81,9 +86,9 @@ class HomePage extends Component {
             <i className="fab fa-github-square" style={{ fontSize: 40 }}></i>
           </a>
         </div>
-        <div id="homeBody">
-          <div className="homeNameBox">
-            <h1 className="homeName">
+        <div id={styles.homeBody}>
+          <div className={styles.homeNameBox}>
+            <h1 className={styles.homeName}>
               <span>N</span>
               <span>a</span>
               <span>t</span>
@@ -105,9 +110,9 @@ class HomePage extends Component {
             </h1>
             <h5>Frontend Developer</h5>
           </div>
-          <div className="homeGoal">
-            <div className="homeGoalName">My Goal</div>
-            <div className="homeGoalBody">
+          <div className={styles.homeGoal}>
+            <div className={styles.homeGoalName}>My Goal</div>
+            <div className={styles.homeGoalBody}>
               I want to be a vital team member in your company, that&#39;s why I
               constantly have new projects to work on all the time testing
               myself on new languages, Programing styles, and messing with new
@@ -118,37 +123,37 @@ class HomePage extends Component {
               a passion and it brings me joy to build projects in this
               framework.
             </div>
-            <div className="homeGoalBody">
+            <div className={styles.homeGoalBody}>
               I believe in simplicity to the user interface, but displaying all
               information to those users with out cluttering there screen.
             </div>
-            <div className="homeGoalBody">
+            <div className={styles.homeGoalBody}>
               This goal can never end as every project can spark new ideas and
               better ways to improve the user interface.
             </div>
-            <div className="homeGoalName">My Education</div>
-            <div className="homeGoalBody">
+            <div className={styles.homeGoalName}>My Education</div>
+            <div className={styles.homeGoalBody}>
               Bottega is the coding boot camp i went to learn javascript and
               python.
             </div>
-            <div className="homeGoalBody">
+            <div className={styles.homeGoalBody}>
               UVU is the school I&#39;m currently in and working towards a
               bachelors degree in computer science.
             </div>
           </div>
-          <div className="homeLanguages">
-            <div className="homeLanguagesName">Languages I Know</div>
-            <div className="homeLanguagesList">
-              <div className="homeLanguagesListColumn">
+          <div className={styles.homeLanguages}>
+            <div className={styles.homeLanguagesName}>Languages I Know</div>
+            <div className={styles.homeLanguagesList}>
+              <div className={styles.homeLanguagesListColumn}>
                 {this.state.langColLeft.map((project, key) => (
-                  <div className="homeLanguagesListColumnItem" key={key}>
+                  <div className={styles.homeLanguagesListColumnItem} key={key}>
                     {this.languages(project)}
                   </div>
                 ))}
               </div>
-              <div className="homeLanguagesListColumn">
+              <div className={styles.homeLanguagesListColumn}>
                 {this.state.langColRight.map((project, key) => (
-                  <div className="homeLanguagesListColumnItem" key={key}>
+                  <div className={styles.homeLanguagesListColumnItem} key={key}>
                     {this.languages(project)}
                   </div>
                 ))}
@@ -156,7 +161,7 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
-        <div id="homeRightSide">
+        <div id={styles.homeRightSide}>
           <NameSigned />
           <a href="/contact">
             <img alt="" src="assets/Logo 1.png" />

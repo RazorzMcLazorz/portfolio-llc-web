@@ -1,16 +1,18 @@
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import styles from './styles/index.module.scss'
+
 import FatalErrorPage from 'src/pages/FatalErrorPage/FatalErrorPage'
 import Routes from 'src/Routes'
-
-import './index.css'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <RedwoodApolloProvider>
-        <Routes />
+        <Routes styles={styles} />
       </RedwoodApolloProvider>
     </RedwoodProvider>
   </FatalErrorBoundary>
