@@ -169,7 +169,7 @@ class HomePage extends Component<IProps> {
         <div id={styles.homeRightSide}>
           <NameSigned />
           <a href="/contact">
-            <img alt="" src="assets/Logo 1.png" />
+            <img alt="" src="favicon.png" />
           </a>
         </div>
       </div>

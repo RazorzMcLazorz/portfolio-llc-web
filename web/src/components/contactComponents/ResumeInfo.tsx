@@ -2,10 +2,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import print from 'print-js'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import Resume from './Resume.pdf'
-import print from 'print-js'
+import Resume from '../../../public/Resume.pdf'
 import StylesType from 'src/StylesType'
 
 interface IProps {
@@ -16,6 +16,7 @@ interface IProps {
 class ResumeInfo extends Component<IProps> {
   render() {
     const { styles } = this.props
+
     return (
       <div className={styles.ResumeInfo}>
         <div

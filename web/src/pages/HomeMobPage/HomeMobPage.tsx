@@ -47,7 +47,7 @@ class HomeMobPage extends Component<IProps> {
           <h6>Frontend Developer</h6>
           <NameSigned />
           <div id={styles.mobileLogo}>
-            <img alt="" src="assets/Logo 1.png" />
+            <img alt="" src="favicon.png" />
           </div>
           <div id={styles.mobileLinks}>
             <Link
