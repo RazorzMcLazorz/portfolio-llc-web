@@ -1,46 +1,27 @@
-// In this file, all Page components from 'src/pages` are auto-imported. Nested
-// directories are supported, and should be uppercase. Each subdirectory will be
-// prepended onto the component name.
-//
-// Examples:
-//
-// 'src/pages/HomePage/HomePage.js'         -> HomePage
-// 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 import React from 'react'
 import { Router, Route } from '@redwoodjs/router'
 import StylesType from 'src/StylesType'
 
 import HomePage from './pages/HomePage/HomePage'
-// import Projects from './pages/projects'
-// import Skills from './pages/skills'
-// import Login from './pages/login'
-// import Contact from './pages/contact'
+import ProjectsPage from './pages/ProjectsPage/ProjectsPage'
+import SkillsPage from './pages/SkillsPage/SkillsPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+import ContactPage from './pages/ContactPage/ContactPage'
 
-// import HomeMob from './pages/homeMob'
-// import MobProjects from './pages/mobProject'
-// import SkillsMob from './pages/skillsMob'
-// import ContactMob from './pages/contactMob'
+import HomeMobPage from './pages/HomeMobPage/HomeMobPage'
+import ProjectsMobPage from './pages/ProjectsMobPage/ProjectsMobPage'
+import SkillsMobPage from './pages/SkillsMobPage/SkillsMobPage'
+import ContactMobPage from './pages/ContactMobPage/ContactMobPage'
 
 const Routes = ({ styles }: { styles: StylesType }) => {
+  const isMobile = screen.width < 600
   return (
     <Router>
-      {screen.width < 600 ? (
-        <>
-          {/* <Route path="/" component={HomeMob} />
-          <Route path="/login" component={Login} />
-          <Route path="/contact" component={ContactMob} />
-          <Route path="/projects" component={MobProjects} />
-          <Route path="/skills" component={SkillsMob} /> */}
-        </>
-      ) : (
-        <>
-          <Route path="/" page={() => <HomePage styles={styles} />} name="home" />
-          {/* <Route exact path='/projects' component={Projects} />
-          <Route exact path='/skills' component={Skills} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/contact' component={Contact} /> */}
-        </>
-      )}
+      <Route path="/" page={() => (isMobile ? <HomeMobPage styles={styles} /> : <HomePage styles={styles} />)} name="homePage" />
+      <Route path="/projects" page={() => (isMobile ? <ProjectsMobPage styles={styles} /> : <ProjectsPage styles={styles} />)} name="projectsPage" />
+      <Route path="/skills" page={() => (isMobile ? <SkillsMobPage styles={styles} /> : <SkillsPage styles={styles} />)} name="skillsPage" />
+      <Route path="/contact" page={() => (isMobile ? <ContactMobPage styles={styles} /> : <ContactPage styles={styles} />)} name="contactPage" />
+      <Route path="/login" page={() => <LoginPage styles={styles} />} name="LoginPage" />
       <Route notfound page={() => <HomePage styles={styles} />} />
     </Router>
   )
