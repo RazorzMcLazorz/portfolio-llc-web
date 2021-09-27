@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.0.0",
+  "name": "nateyoungdev",
+  "version": "2.0.0",
   "private": true,
   "browserslist": {
     "development": [
@@ -12,6 +12,8 @@
       "not IE_Mob 11"
     ]
   },
+  "author": "Nathaniel P Young",
+  "license": "MIT",
   "dependencies": {
     "@redwoodjs/forms": "0.36.4",
     "@redwoodjs/router": "0.36.4",
