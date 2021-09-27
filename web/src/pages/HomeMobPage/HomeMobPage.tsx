@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Footer from 'src/components/footer'
+import { Head } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
+import Footer from 'src/components/footer'
 import NameSigned from 'src/components/nameSigned'
 import StylesType from 'src/StylesType'
 
@@ -17,6 +18,9 @@ class HomeMobPage extends Component<IProps> {
     const { styles } = this.props
     return (
       <div id={styles.homeMob}>
+        <Head>
+          <title>Home</title>
+        </Head>
         <div id={styles.mobile}>
           <div id={styles.mobileName}>
             <h4 className={styles.mobHomeName}>

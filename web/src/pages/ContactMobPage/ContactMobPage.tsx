@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Head } from '@redwoodjs/web'
 import Navbar from 'src/components/navbar'
 import ContactInfo from 'src/components/contactComponents/ContactInfo'
 import Refferences from 'src/components/contactComponents/Refferences'
@@ -14,6 +15,9 @@ class ContactMobPage extends Component<IProps> {
     const { styles } = this.props
     return (
       <div id={styles.contactMob}>
+        <Head>
+          <title>Contact</title>
+        </Head>
         <Navbar />
         <ContactInfo isMobile />
         <Refferences isMobile />

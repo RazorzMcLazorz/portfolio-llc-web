@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Footer from 'src/components/footer'
+import { Head } from '@redwoodjs/web'
 import NavBar from 'src/components/navbar'
 import StylesType from 'src/StylesType'
 
@@ -27,6 +27,9 @@ class LoginPage extends Component<IProps> {
     const { styles } = this.props
     return (
       <div>
+        <Head>
+          <title>Login</title>
+        </Head>
         <NavBar />
         <div id={styles.login}>
           <form id={styles.loginForm}>

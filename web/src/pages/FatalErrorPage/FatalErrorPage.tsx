@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
+import { Head } from '@redwoodjs/web'
 
 class FatalErrorPage extends Component {
   render() {
-    return <div>Fatal</div>
+    return (
+      <div>
+        <Head>
+          <title>Fatal</title>
+        </Head>
+        Fatal
+      </div>
+    )
   }
 }
 

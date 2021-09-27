@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Head } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
 import NameSigned from '../../components/nameSigned'
 import StylesType from 'src/StylesType'
@@ -69,6 +70,9 @@ class HomePage extends Component<IProps> {
     const { styles } = this.props
     return (
       <div id={styles.home} className={styles.energyBackground}>
+        <Head>
+          <title>Home</title>
+        </Head>
         <div id={styles.homeNav}>
           <Link to={routes.projectsPage()} className={styles.homeNavLink}>
             Projects

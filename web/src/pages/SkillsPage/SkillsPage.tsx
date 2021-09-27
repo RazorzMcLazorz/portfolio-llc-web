@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Head } from '@redwoodjs/web'
 import NavBar from 'src/components/navbar'
 import SkillsSpin from 'src/components/skillsSpin'
 import StylesType from 'src/StylesType'
@@ -12,6 +13,9 @@ class SkillsPage extends Component<IProps> {
     const { styles } = this.props
     return (
       <div id={styles.skills}>
+        <Head>
+          <title>Skills</title>
+        </Head>
         <NavBar />
         <div id={styles.skillsDetails}>
           <div className={styles.skillsMiddle}>
