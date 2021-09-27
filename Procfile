@@ -1,2 +1,2 @@
 release: yarn rw prisma migrate deploy
-web: bin/start-nginx node index.js
+web: node_modules/bin/start-nginx node index.js
