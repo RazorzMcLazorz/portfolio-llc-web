@@ -9,8 +9,9 @@
 import React from 'react'
 import { Router, Route } from '@redwoodjs/router'
 import HomePage from './pages/HomePage/HomePage'
+import StylesType from 'src/StylesType'
 
-const Routes = ({ styles }: { styles: any }) => {
+const Routes = ({ styles }: { styles: StylesType }) => {
   return (
     <Router>
       <Route path="/" page={() => <HomePage styles={styles} />} name="home" />

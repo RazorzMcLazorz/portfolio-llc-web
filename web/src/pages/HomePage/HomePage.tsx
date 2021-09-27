@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from '@redwoodjs/router'
 import NameSigned from '../../components/nameSigned'
+import StylesType from 'src/StylesType'
 
 interface IProps {
-  styles: any
+  styles: StylesType
 }
 
 class HomePage extends Component<IProps> {
