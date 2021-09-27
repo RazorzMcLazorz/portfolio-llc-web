@@ -1,4 +1,21 @@
 @import 'home';
+@import 'homeMob';
+@import 'projects';
+@import 'skills';
+@import 'NavBar';
+@import 'Login';
+@import 'inputBoxes';
+@import 'contact';
+@import 'resumeInfo';
+@import 'Refferences';
+@import 'mobProject';
+@import 'skillsMob';
+@import './Animations/rotations.scss';
+@import './Animations/pop.scss';
+@import './energyFall.scss';
+@import './Animations/energy.scss';
+@import './Animations/signedName.scss';
+@import './Animations/skillsSpin.scss';
 
 * {
   font-family: sans-serif;
