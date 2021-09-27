@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Footer from 'src/components/footer'
-import { Link } from '@redwoodjs/router'
+import { Link, routes } from '@redwoodjs/router'
 import NameSigned from 'src/components/nameSigned'
 import StylesType from 'src/StylesType'
 
@@ -46,13 +46,19 @@ class HomeMobPage extends Component<IProps> {
             <img alt="" src="assets/Logo 1.png" />
           </div>
           <div id={styles.mobileLinks}>
-            <Link to="/projects" className={styles.mobileLinkButtons}>
+            <Link
+              to={routes.projectsPage()}
+              className={styles.mobileLinkButtons}
+            >
               Projects
             </Link>
-            <Link to="/skills" className={styles.mobileLinkButtons}>
+            <Link to={routes.skillsPage()} className={styles.mobileLinkButtons}>
               My Skills
             </Link>
-            <Link to="/contact" className={styles.mobileLinkButtons}>
+            <Link
+              to={routes.contactPage()}
+              className={styles.mobileLinkButtons}
+            >
               Contact Me
             </Link>
           </div>
